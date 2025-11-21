@@ -25,10 +25,12 @@ jobs:
         with:
           token: ${{ secrets.DEPLOY_TOKEN }}
 
-      - name: 安装和构建
+      - name: 安装 Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22
+
+      - name: 安装依赖和构建
         run: |
           npm install
           npm run build
